@@ -7,6 +7,9 @@ REPO_URL="https://github.com/aowei010/LayerEdge-BOT"
 # Step 1: 检查并安装 Python3.9 或更高版本
 PYTHON_VERSION=$(python3 -c 'import sys; print(".".join(map(str, sys.version_info[:3])))' 2>/dev/null)
 REQUIRED_PYTHON_VERSION="3.9"
+
+echo "Detected Python version: $PYTHON_VERSION"
+
 if [[ "$(printf '%s\n' "$REQUIRED_PYTHON_VERSION" "$PYTHON_VERSION" | sort -V | head -n1)" != "$REQUIRED_PYTHON_VERSION" ]]; then
   echo "Python 3.9 or higher is required. Please install it first."
   exit 1
